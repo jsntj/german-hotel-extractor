@@ -1,5 +1,3 @@
-# german-hotel-extractor
-
 # Hotel Data Extractor for Germany
 📌 Project Overview
 This Python script extracts comprehensive hotel and accommodation data across Germany, with special features for analyzing properties relative to Hamburg. It gathers:
