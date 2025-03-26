@@ -1,45 +1,73 @@
 # german-hotel-extractor
 
-# Overview
-This project cleans and preprocesses hotel location data containing German special characters (ä, ö, ü, ß). The script handles encoding issues, removes invalid entries, and ensures proper formatting for analysis.
+# Hotel Data Extractor for Germany
+📌 Project Overview
+This Python script extracts comprehensive hotel and accommodation data across Germany, with special features for analyzing properties relative to Hamburg. It gathers:
 
-🛠 Key Tasks Performed
-Character Encoding Fixes
+Basic hotel information (names, addresses, contact details)
 
-Corrects mojibake (corrupted characters) in German text (e.g., "MÃ¼hlenstraÃŸe" → "Mühlenstraße")
+Location data with coordinates
 
-Handles special characters through Unicode normalization
+Distance calculations from Hamburg
 
-Data Cleaning
+Estimated bus travel times
 
-Removes rows with:
+Water proximity analysis
 
-Missing values (NA) in the hotel name field
+🌟 Key Features
+Copy
+1. Multi-Source Data Collection
+   - OpenStreetMap API integration
+   - Handles both point (nodes) and area (ways) data types
 
-"N/A" placeholders (case insensitive)
+2. Advanced Location Analytics
+   - Haversine distance calculations
+   - Bus travel time estimates (60km/h average)
+   - Waterfront property detection (1km threshold)
 
-Empty name strings
+3. Data Processing
+   - Parallel processing with ThreadPoolExecutor
+   - Automatic duplicate removal
+   - Robust error handling and retries
 
-Robust File Handling
+4. Output
+   - Clean CSV exports with timestamps
+   - Data validation flags
+   - Summary statistics
+🛠 Technical Implementation
+python
+Copy
+- Python 3.8+
+- Required Packages:
+  • overpy (OpenStreetMap API)
+  • pandas (data processing)
+  • concurrent.futures (parallel processing)
+- Modular architecture with 8 core functions
+📊 Sample Data Output
+name	city	distance_km	bus_time	is_near_water
+Hotel Hafen	Hamburg	0.0	0m	Yes
+Ostsee Resort	Lübeck	58.2	58m	Yes
+Berlin Plaza	Berlin	255.9	4h16m	No
+🚀 Getting Started
+Install requirements:
 
-Automatic detection of file encoding (UTF-8, Latin1, Windows-1252)
-
-Outputs Excel-compatible CSV with BOM (UTF-8-sig)
-
-📂 Files
-hotel_data_cleaner.py: Main cleaning script
-
-hotels_optimized_[date].csv: Raw input file
-
-cleaned_dataset.csv: Processed output
-
-🚀 Usage
 bash
 Copy
-python hotel_data_cleaner.py
-💡 Technical Notes
-Preserves all valid data columns unchanged
+pip install overpy pandas
+Run the extractor:
 
-Provides row count before/after cleaning
+bash
+Copy
+python hotel_extractor.py
+Outputs:
 
-Specifically designed for German location data
+hotels_optimized_<timestamp>.csv
+
+Console summary statistics
+
+📈 Potential Enhancements
+Copy
+• Add booking.com API integration (requires API key)
+• Implement hotel price monitoring
+• Add interactive map visualization
+• Expand to other European cities
