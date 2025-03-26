@@ -1,5 +1,6 @@
 # german-hotel-extractor
-Overview
+
+# Overview
 This project cleans and preprocesses hotel location data containing German special characters (ä, ö, ü, ß). The script handles encoding issues, removes invalid entries, and ensures proper formatting for analysis.
 
 🛠 Key Tasks Performed
