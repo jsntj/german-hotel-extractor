@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import os
 import numpy as np
-import json
 
 # Set the title of the dashboard
 st.title("Hotel Finder Dashboard")
@@ -69,7 +68,3 @@ else:
             st.warning("Latitude and Longitude columns are missing in the dataset.")
     else:
         st.warning("No hotels match the selected criteria.")
-
-# Load configuration
-with open("config.json") as f:
-    config = json.load(f)
