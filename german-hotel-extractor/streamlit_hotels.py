@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Load the cleaned hotel data
-df = pd.read_csv("data/hotels_cleaned.csv")
+df = pd.read_csv("/workspaces/german-hotel-extractor/german-hotel-extractor/data/hotels_cleaned.csv")
 
 # Set the title of the dashboard
 st.title("Hotel Finder Dashboard")
